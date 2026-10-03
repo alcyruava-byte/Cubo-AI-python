@@ -1,0 +1,59 @@
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+
+productos = [
+    {
+        "id": 1,
+        "nombre": "Auriculares Bluetooth",
+        "precio": 39.99,
+        "imagen": "productos/producto1.jpg"
+    },
+    {
+        "id": 2,
+        "nombre": "Teclado Mecánico",
+        "precio": 59.99,
+        "imagen": "productos/producto2.jpg"
+    },
+    {
+        "id": 3,
+        "nombre": "Mouse Inalámbrico",
+        "precio": 24.99,
+        "imagen": "productos/producto3.jpg"
+    },
+    {
+        "id": 4,
+        "nombre": "Smart Watch",
+        "precio": 79.99,
+        "imagen": "productos/producto4.jpg"
+    }
+]
+
+
+@app.route("/")
+def home():
+    return render_template("home.html", productos=productos)
+
+
+@app.route("/productos")
+def productos_page():
+    return render_template("productos.html", productos=productos)
+
+
+@app.route("/producto/<int:id>")
+def producto(id):
+
+    producto = next(
+        (p for p in productos if p["id"] == id),
+        None
+    )
+
+    return render_template(
+        "producto.html",
+        producto=producto
+    )
+
+
+if __name__ == "__main__":
+    app.run(debug=True)

@@ -1,0 +1,48 @@
+quiero crean una pagina web en python y quiero que me brindes la estructura  del proyecto a realizar, será una pagina sencilla sin login parecida a la de amazon
+
+solo para interfaz con imagenes quedamdas por mucho 2 o 3 paginas django
+
+quiero crear este proyecto en python, quiero que sea lo mas sencillo posible, con poco codigo sin logica complicada 
+
+mi_tienda/
+│
+├── app.py
+├── requirements.txt
+├── README.md
+│
+├── config/
+│   └── config.py
+│
+├── models/
+│   ├── __init__.py
+│   └── producto.py
+│
+├── routes/
+│   ├── __init__.py
+│   ├── productos.py
+│   ├── carrito.py
+│   └── checkout.py
+│
+├── templates/
+│   ├── base.html
+│   │
+│   ├── home.html
+│   ├── productos.html
+│   ├── producto_detalle.html
+│   ├── carrito.html
+│   └── checkout.html
+│
+├── static/
+│   ├── css/
+│   │   └── style.css
+│   │
+│   ├── js/
+│   │   └── main.js
+│   │
+│   └── img/
+│       ├── productos/
+│       └── banners/
+│
+└── database/
+    └── tienda.db
+
